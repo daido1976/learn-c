@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// https://9cguide.appspot.com/06-01.html#S3
 int main(void)
 {
     int data1, data2;
