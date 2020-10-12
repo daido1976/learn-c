@@ -12,6 +12,20 @@ int main(int argc, char *argv[])
 {
     int i;
 
+    // コマンドライン引数がないときは stdin を読む
+    if (argc == 1)
+    {
+        int c;
+
+        // TODO: fgetc(stdin) の戻り値が EOF(-1) にならず、無限ループになるので直す
+        while ((c = fgetc(stdin)) != EOF)
+        {
+            if (putchar(c) < 0)
+                exit(1);
+        }
+        exit(0);
+    }
+
     if (argc < 2)
     {
         fprintf(stderr, "%s: file name not given\n", argv[0]);
