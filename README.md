@@ -2,7 +2,7 @@
 
 ## kuru-c
 
-- See. [苦しんで覚えるＣ言語](https://9cguide.appspot.com/)（[サイト内検索](https://www.google.com/?as_sitesearch=https://9cguide.appspot.com/)）
+- See. [苦しんで覚えるＣ言語](https://9cguide.appspot.com/)（[サイト内検索 with Google Programmable Search](https://cse.google.com/cse?cx=1fde42476d787938a)）
 
 ## std-linux2
 
