@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     {
         int c;
 
-        // TODO: fgetc(stdin) の戻り値が EOF(-1) にならず、無限ループになるので直す
+        // `$ cat cat.c | ./a.out` のように標準入力を渡す
         while ((c = fgetc(stdin)) != EOF)
         {
             if (putchar(c) < 0)
