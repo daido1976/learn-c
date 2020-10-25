@@ -1,27 +1,46 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <getopt.h>
+#define DEFAULT_N_LINES 10
 
 void do_head(FILE *f, long nlines);
 
-int main(int argc, char const *argv[])
-{
-  long nlines;
+static struct option longopts[] = {
+    {"lines", required_argument, NULL, 'n'},
+    {"help", no_argument, NULL, 'h'},
+    {0, 0, 0, 0}};
 
-  if (argc < 2)
+int main(int argc, char *argv[])
+{
+  int opt;
+  long nlines = DEFAULT_N_LINES;
+
+  while ((opt = getopt_long(argc, argv, "n:h", longopts, NULL)) != -1)
   {
-    fprintf(stderr, "Useage: %s n [file file...] \n", argv[0]);
-    exit(EXIT_FAILURE);
+    switch (opt)
+    {
+    case 'n':
+      nlines = atol(optarg);
+      break;
+    case 'h':
+      fprintf(stdout, "Useage: %s [-n lines] [FILE ...]\n", argv[0]);
+      exit(EXIT_SUCCESS);
+    case '?':
+      fprintf(stderr, "Useage: %s [-n lines] [FILE ...]\n", argv[0]);
+      exit(EXIT_FAILURE);
+    default:
+      break;
+    }
   }
 
-  nlines = atol(argv[1]);
-  if (argc == 2)
+  if (optind == argc)
   {
     do_head(stdin, nlines);
   }
   else
   {
     int i;
-    for (i = 2; i < argc; i++)
+    for (i = optind; i < argc; i++)
     {
       FILE *f;
 
