@@ -8,3 +8,8 @@
 
 - Learn Linux & C language with [ふつうの Linux プログラミング 第 2 版](https://www.amazon.co.jp/dp/4797386479/).
 - See. https://github.com/aamine/stdlinux2-source
+
+## cpp
+
+- https://ezoeryou.github.io/cpp-intro/
+- https://cpprefjp.github.io/
